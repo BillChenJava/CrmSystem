@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="mycustomer" namespace="/pages_testcustomer"
+		extends="publicapp">
+
+		<action name="test_customer_cate"
+			class="com.crm.action.TestCrmCustomerCategoryAction">
+			<result>test_crm_customercate_list.jsp</result>
+			<result name="trash">/pages_sys/trash_productcate_list.jsp</result>
+		</action>
+
+		<action name="test_customer"
+			class="com.crm.action.TestCrmCustomerAction">
+			<result>test_crm_customer_list.jsp</result>
+			<result name="toadd">test_crm_customer_add.jsp</result>
+			<result name="finddone">test_crm_customer_update.jsp</result>
+			<result name="add" type="redirectAction">test_customer</result>
+			<result name="delfalse" type="redirectAction">test_customer</result>
+			<result name="update" type="redirectAction">test_customer</result>
+			
+			<result name="trash">/pages_sys/trash_productcate_list.jsp</result>
+		</action>
+	</package>
+</struts>
